@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>0.0.1</Version>
+    <Copyright>Copyright © 2020 Randall Maas. All rights reserved.</Copyright>
+    <PackageProjectUrl>https://github.com/randym32/Anki.Vector.WebVizSDK</PackageProjectUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/randym32/Anki.Vector.WebVizSDK</RepositoryUrl>
+    <Description>https://github.com/randym32/Anki.Vector.WebVizSDK</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="src\Utils\Paths.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="webViz.json" />
+    <None Include="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="4.7.1" />
+    <PackageReference Include="WebSocket4Net" Version="0.15.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
