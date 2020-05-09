@@ -34,7 +34,8 @@ partial class Util
         var ret = new Dictionary<string, object>();
         foreach (var item in a)
         {
-            ret[item.Key] = JsonToNormal((JsonElement) item.Value);
+            if (null != item.Value)
+                ret[item.Key] = JsonToNormal((JsonElement)item.Value);
         }
         return ret;
     }
